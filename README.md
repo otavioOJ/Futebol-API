@@ -1,6 +1,6 @@
 # FutebolAPI
 
-API para cadastro e consulta de informações sobre clubes de futebol, incluindo títulos conquistados e dados de jogadores, desenvolvida como atividade da disciplina C14.
+API para gerenciamento e consulta de informações sobre clubes de futebol, incluindo títulos conquistados e dados de jogadores, desenvolvida como atividade da disciplina C14.
 
 
 
