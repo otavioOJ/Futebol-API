@@ -15,6 +15,6 @@ mvn clean install
 ```
 
 ```bash
-mvn spring-boot:run
+mvn exec:java -Dexec.mainClass="br.inatel.cdg"
 ```
 
