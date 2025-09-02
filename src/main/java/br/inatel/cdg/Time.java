@@ -1,15 +1,22 @@
 package br.inatel.cdg;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-class Time {
+public class Time {
     private String nome;
     private int anoFundacao;
-    private List<Jogador> jogadores = new ArrayList<>();
-    private List<Titulo> titulos = new ArrayList<>();
+    private final List<Jogador> jogadores = new ArrayList<>();
+    private final List<Titulo> titulos = new ArrayList<>();
 
     public Time(String nome, int anoFundacao) {
+        this.nome = nome;
+        this.anoFundacao = anoFundacao;
+
+        if (anoFundacao < 0) {
+            throw new IllegalArgumentException("Ano de fundação não pode ser negativo");
+        }
         this.nome = nome;
         this.anoFundacao = anoFundacao;
     }
@@ -22,34 +29,24 @@ class Time {
         titulos.add(titulo);
     }
 
-    public void listarJogadores() {
-        if (jogadores.isEmpty()) {
-            System.out.println("Nenhum jogador cadastrado.");
-        } else {
-            for (Jogador j : jogadores) {
-                System.out.println(j);
-            }
-        }
+    public List<Jogador> getJogadores() {
+        return Collections.unmodifiableList(jogadores);
     }
 
-    public void listarTitulos() {
-        if (titulos.isEmpty()) {
-            System.out.println("Nenhum título cadastrado.");
-        } else {
-            for (Titulo t : titulos) {
-                System.out.println(t);
-            }
-        }
+    public List<Titulo> getTitulos() {
+        return Collections.unmodifiableList(titulos);
     }
+
+    public String getNome() { return nome; }
+    public int getAnoFundacao() { return anoFundacao; }
 
     @Override
     public String toString() {
-        return "Time: " + nome + " | Fundação: " + anoFundacao +
-                " | Jogadores: " + jogadores.size() +
-                " | Títulos: " + titulos.size();
-    }
-
-    public String getNome() {
-        return nome;
+        return "Time{" +
+                "nome='" + nome + '\'' +
+                ", anoFundacao=" + anoFundacao +
+                ", jogadores=" + jogadores.size() +
+                ", titulos=" + titulos.size() +
+                '}';
     }
 }

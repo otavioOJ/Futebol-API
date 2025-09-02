@@ -133,12 +133,26 @@ public class Main {
     private static void listarJogadoresTime() {
         Time time = escolherTime();
         if (time == null) return;
-        time.listarJogadores();
+
+        if (time.getJogadores().isEmpty()) {
+            System.out.println("Nenhum jogador cadastrado.");
+            return;
+        }
+        for (Jogador j : time.getJogadores()) {
+            System.out.println(j);
+        }
     }
 
     private static void listarTitulosTime() {
         Time time = escolherTime();
         if (time == null) return;
-        time.listarTitulos();
+
+        if (time.getTitulos().isEmpty()) {
+            System.out.println("Nenhum título cadastrado.");
+            return;
+        }
+        for (Titulo t : time.getTitulos()) {
+            System.out.println(t);
+        }
     }
 }
