@@ -12,13 +12,6 @@ public class Jogador {
     public Jogador(String nome, String dataNascimento, String posicao,
                    String peDominante, double altura, double peso) {
 
-        if (altura < 0) {
-            throw new IllegalArgumentException("Altura não pode ser negativa");
-        }
-        if (peso < 0) {
-            throw new IllegalArgumentException("Peso não pode ser negativo");
-        }
-
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.posicao = posicao;
