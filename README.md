@@ -15,6 +15,7 @@ mvn clean install
 ```
 
 ```bash
-mvn exec:java -Dexec.mainClass="br.inatel.cdg"
+mvn exec:java "-Dexec.mainClass=br.inatel.cdg.Main"
+
 ```
 

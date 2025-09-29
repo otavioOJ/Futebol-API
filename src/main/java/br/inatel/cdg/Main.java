@@ -3,6 +3,7 @@ package br.inatel.cdg;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.sql.Connection;
 
 public class Main {
     private static List<Time> times = new ArrayList<>();
@@ -10,6 +11,13 @@ public class Main {
 
     public static void main(String[] args) {
         int opcao;
+
+        try (Connection conn = ConnectionFactory.getConnection()) {
+            System.out.println("✅ Conectado com sucesso ao MySQL!");
+        } catch (Exception e) {
+            System.err.println("❌ Erro ao conectar: " + e.getMessage());
+            e.printStackTrace();
+        }
 
         do {
             System.out.println("\n=== MENU PRINCIPAL ===");

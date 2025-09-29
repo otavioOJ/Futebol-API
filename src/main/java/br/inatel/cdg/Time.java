@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Time {
+    private Integer id;
     private String nome;
     private int anoFundacao;
     private final List<Jogador> jogadores = new ArrayList<>();
@@ -20,6 +21,9 @@ public class Time {
         this.nome = nome;
         this.anoFundacao = anoFundacao;
     }
+
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
 
     public void adicionarJogador(Jogador jogador) {
         jogadores.add(jogador);

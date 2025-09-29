@@ -1,14 +1,14 @@
 package br.inatel.cdg;
 
 public class Jogador {
+    private Integer id;
     private String nome;
-    private String dataNascimento;  // ✅ o Main pede data (dd/mm/aaaa)
+    private String dataNascimento;
     private String posicao;
     private String peDominante;
-    private double altura;          // ✅ numérico
-    private double peso;            // ✅ numérico
+    private double altura;
+    private double peso;
 
-    // ✅ bater com o construtor usado no Main
     public Jogador(String nome, String dataNascimento, String posicao,
                    String peDominante, double altura, double peso) {
 
@@ -26,6 +26,9 @@ public class Jogador {
         this.altura = altura;
         this.peso = peso;
     }
+
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
 
     public String getNome() { return nome; }
     public String getDataNascimento() { return dataNascimento; }

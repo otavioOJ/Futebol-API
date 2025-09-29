@@ -1,6 +1,7 @@
 package br.inatel.cdg;
 
 public class Titulo {
+    private Integer id;
     private String nome;
     private int ano;
 
@@ -13,9 +14,13 @@ public class Titulo {
             throw new IllegalArgumentException("Ano do título não pode ser negativo");
         }
 
+
         this.nome = nome;
         this.ano = ano;
     }
+
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
 
     public String getNome() {
         return nome;
